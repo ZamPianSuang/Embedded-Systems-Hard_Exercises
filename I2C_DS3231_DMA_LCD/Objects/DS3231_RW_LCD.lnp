@@ -1,0 +1,10 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\main.o"
+".\objects\lcd_20x4_4bits.o"
+".\objects\i2c1_dma.o"
+".\objects\startup_stm32f446xx.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\DS3231_RW_LCD.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\DS3231_RW_LCD.map" -o .\Objects\DS3231_RW_LCD.axf

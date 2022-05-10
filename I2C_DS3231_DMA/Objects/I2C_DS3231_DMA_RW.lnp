@@ -1,0 +1,9 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\main.o"
+".\objects\i2c1_dma.o"
+".\objects\startup_stm32f446xx.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\I2C_DS3231_DMA_RW.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\I2C_DS3231_DMA_RW.map" -o .\Objects\I2C_DS3231_DMA_RW.axf

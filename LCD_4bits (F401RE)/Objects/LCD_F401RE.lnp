@@ -1,0 +1,9 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\main.o"
+".\objects\lcd_20x4_4bits.o"
+".\objects\startup_stm32f401xe.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\LCD_F401RE.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\LCD_F401RE.map" -o .\Objects\LCD_F401RE.axf

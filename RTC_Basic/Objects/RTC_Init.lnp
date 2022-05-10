@@ -1,0 +1,9 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\main.o"
+".\objects\rtc.o"
+".\objects\startup_stm32f446xx.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\RTC_Init.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\RTC_Init.map" -o .\Objects\RTC_Init.axf
