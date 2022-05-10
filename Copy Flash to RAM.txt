@@ -1,0 +1,16 @@
+--diag_suppress=L6314W
+
+;************************* Added Manually *************************
+		IMPORT	|Image$$ER_IROM1$$RO$$Limit|
+		IMPORT	|Image$$RW_IRAM1$$Base|
+		IMPORT	|Image$$RW_IRAM1$$ZI$$Base|
+			
+				LDR		R1, =|Image$$ER_IROM1$$RO$$Limit|
+				LDR		R2, =|Image$$RW_IRAM1$$Base|
+				LDR 	R3, =|Image$$RW_IRAM1$$ZI$$Base|
+				
+Copy_RW			CMP		R2, R3
+				LDRBCC	R4, [R1], #1
+				STRBCC	R4, [R2], #1
+				BCC		Copy_RW
+;****************************** END ******************************
